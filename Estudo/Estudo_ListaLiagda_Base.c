@@ -2,24 +2,20 @@
 #include<stdlib.h>
 #include<conio.h>
 
-
-typedef struct Node {   //inicializar a estrutura de uma lista ligada
+typedef struct Node{
     int data;
     struct Node* next;
 }NODE;
 
-void printList(NODE* list);   //imprimir lista
-void deleteList(NODE** list); //eliminar lista
-int tamanhoList(NODE*);  //diz o número de nós, ou seja, o tamanho da lista
-
-
+void printList(NODE* list);
+void deletelist(NODE** list);
+void tamanhoList(NODE* list);
 
 int main(int argc, char*argv[]){
 
     NODE* primeiro = NULL;
     NODE* segundo = NULL;
     NODE* terceiro = NULL;
-
 
     primeiro=(NODE*)malloc(sizeof(NODE));
     segundo=(NODE*)malloc(sizeof(NODE));
@@ -28,30 +24,31 @@ int main(int argc, char*argv[]){
     primeiro->data = 5;
     primeiro->next = segundo;
 
-    segundo->data=10;
-    segundo->next=terceiro;
+    segundo->data = 27;
+    segundo->next = terceiro;
 
-    terceiro->data=15;
-    terceiro->next=NULL;
+    terceiro->data = 13;
+    terceiro->next = NULL;
 
     printList(primeiro);
-    //tamanhoList(primeiro);
-    //deleteList(&primeiro);
-    //printList(primeiro);
-    //printList(primeiro);
+    tamanhoList(primeiro);
+    deleteList(primeiro);
+    printList(primeiro);
+
 
     system("pause");
     return 0;
 }
 
+
 void printList(NODE* list){
-    if (list==NULL){
-        printf("\n Lista vazia\n");
-        return;    //com return já não precisa de else
+    if(list==NULL){
+        printf("Lista vazia");
+        return;
     }
 
     while(list!=NULL){
-        printf(" %d ", list->data);
+        printf("%d \n", list->data);
         list = list->next;
     }
 }
@@ -65,21 +62,19 @@ void deleteList(NODE** list){
         free(current);
         current = seguinte;
     }
-
     *list = NULL;
 }
 
-int tamanhoList(NODE* list){
+void tamanhoList(NODE* list){
     if(list==NULL){
-        printf("\nNão tem nós");
+        printf("Nao tem nos\n");
+        return;
     }
-    
     int i=0;
     while(list!=NULL){
         list = list->next;
         i++;
     }
-
-    printf("\nNos: %d", i);
+    printf("Tamanho da lista: %d", i);
 }
 
