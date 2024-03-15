@@ -1,0 +1,25 @@
+S. Miguel da Pena;0.4;1;-1
+Pena;1.4;1;-1
+Gulpilhares Sapioes;0.4;1;-1
+Gulpilhares;1.2;1;-1
+Mondroes;0.5;1;-1
+Mondroes (Junta);0.4;1;-1
+Bisalhaes;0.4;1;-1
+Mondroes I;1.6;1;-1
+Vila Real (Cruz);0.9;1;-1
+Vila Marim I;0.8;1;-1
+Quintela;0.4;1;-1
+Vila Marim;1.3;1;-1
+Caravelas;2.2;1;-1
+Agares;1.6;1;-1
+Ramadas;2.2;1;-1
+Pedregal;2.8;0;-1
+Lordelo;0.5;1;-1
+Laverqueira;0.4;1;-1
+Quinta da Veiga;0.4;1;-1
+Vila Marim II;0.3;1;-1
+Rua Concelho de Boticas;0.3;1;-1
+Rua do Valado;1.2;1;-1
+Hospital;2.3;1;-1
+Terminal Rodoviario;0.0;1;-1
+

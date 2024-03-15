@@ -1,0 +1,33 @@
+Justes R. Agonia;0.6;1;-1
+Justes;1.2;1;-1
+Gache II;0.6;1;-1
+Lamares;0.6;1;-1
+Lagares;0.7;1;-1
+Gache;0.4;1;-1
+Magarelos;1.0;1;-1
+Alvites I;1.2;1;-1
+Pena de Amigo;0.9;0;-1
+Moucos;1.2;1;-1
+Lage;0.8;1;-1
+Lage I;0.3;0;-1
+Raia I;0.7;1;-1
+Raia;0.3;0;-1
+Mateus;1.5;1;-1
+R. Gaspar Sameiro I;0.5;1;-1
+R. Gaspar Sameiro II;0.2;1;-1
+C. Saude Mateus;0.3;1;-1
+Igreja Santo Antonio;0.2;1;-1
+Escolas Araucaria;0.7;1;-1
+Rua Manuel Santos Gomes;0.4;1;-1
+Rua Augusto Cesar;0.6;1;-1
+Carreira Longa;1.0;1;-1
+Piscinas;0.8;1;-1
+Avenida da Europa;0.7;1;-1
+Av. Aureliano Barrigas;0.6;1;-1
+Parque Florestal;0.6;1;-1
+Museu;0.9;1;-1
+Camara Municipal;0.6;1;-1
+Tribunal;0.5;1;-1
+Mercado;1.2;1;-1
+Terminal Rodoviario;0.0;1;-1
+

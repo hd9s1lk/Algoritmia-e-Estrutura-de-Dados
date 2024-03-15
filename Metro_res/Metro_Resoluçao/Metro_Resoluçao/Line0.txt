@@ -1,0 +1,47 @@
+Lordelo;0.5;1;-1
+Laverqueira;0.4;1;-1
+Quinta da Veiga;0.6;1;-1
+Rua Concelho de Boticas;0.3;1;-1
+Rua do Valado;0.4;1;-1
+Escola Superior de Enfermagem;0.4;1;-1
+Instituto de Medicina Legal;0.4;1;-1
+Hospital;0.2;1;-1
+Quinta da Petisqueira;0.8;1;-1
+No IP4;0.5;1;-1
+Avenida da Noruega;0.5;1;-1
+Terminal Rodoviario;0.3;1;-1
+R.D. Pedro de Castro;0.6;1;-1
+Mercado Lateral;0.3;1;-1
+Tribunal;0.3;1;-1
+Mercado;0.5;1;-1
+Pioledo;0.2;1;-1
+Calvario;0.2;1;-1
+Rua Santo Antonio;0.8;1;-1
+Rua Santa Iria;0.7;1;-1
+Igreja N. S. da Conceicao;0.8;1;-1
+B. S. Vicente de Paula;0.6;1;-1
+R. Adelino Samarda;0.4;0;0
+R. Heitor Cramez;0.3;1;-1
+Cemiterio;0.4;1;-1
+Pr. 25 de Abril;0.3;1;-1
+Curva da Timpeira;0.2;1;-1
+Rio Corgo;0.4;1;-1
+Bairro Santa Maria;0.2;1;-1
+Lugar do Boque;0.5;1;-1
+Cooperativa;0.2;1;-1
+Abambres;0.4;1;-1
+Bairro do Alem;0.3;1;-1
+Mateus;0.5;1;-1
+Rua Gaspar Sameiro;0.5;1;-1
+Centro Saude de Mateus;0.2;1;-1
+Igreja Santo Antonio;0.2;1;-1
+Escolas Araucaria;0.7;1;-1
+Rua Manuel Santos Gomes;0.4;1;-1
+Rua Augusto Cesar;0.6;1;-1
+Carreira Longa;0.3;1;-1
+Avenida da Universidade;0.5;1;-1
+Praca da Galiza;0.4;1;-1
+UTAD Livraria;0.7;1;-1
+UTAD Pedagogico;0.5;1;-1
+UTAD Engenharias;0.4;1;-1
+UTAD Reitoria;0.0;1;-1

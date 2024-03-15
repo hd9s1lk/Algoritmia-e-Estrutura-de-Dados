@@ -1,0 +1,6 @@
+﻿  metro.c
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Metro_res\Metro_Resoluçao\Metro_Resoluçao\metro.c(130,17): warning C4013: 'saveMetroLines' indefinido; assumindo extern retornando int
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Metro_res\Metro_Resoluçao\Metro_Resoluçao\metro.c(339,16): warning C4477: 'printf': a cadeia de formato '%d' requer um argumento do tipo 'int', mas um argumento variadic 2 tem o tipo 'STATION *'
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Metro_res\Metro_Resoluçao\Metro_Resoluçao\metro.c(339,16): warning C4313: 'printf': '%d' na cadeia de formato está em conflito com o argumento 2 do tipo 'STATION *'
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Metro_res\Metro_Resoluçao\Metro_Resoluçao\metro.c(351,1): warning C4716: 'custoLinha': deve retornar um valor
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Metro_res\Metro_Resoluçao\Metro_Resoluçao\metro.c(346,1): error C4700: variável local não inicializada 'temp' usada

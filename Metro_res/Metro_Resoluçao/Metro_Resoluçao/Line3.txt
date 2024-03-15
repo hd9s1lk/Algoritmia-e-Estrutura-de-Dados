@@ -1,0 +1,17 @@
+Pomarelhos;1.2;1;-1
+Arnadelo;1.5;1;-1
+Tuizendes I;1.2;1;-1
+Tuizendes II;0.4;1;-1
+Mocaes Igreja;1.1;1;-1
+Torgueda;0.4;1;-1
+Torgueda I;0.6;1;-1
+Menezes;0.4;1;-1
+Torgueda II;1.2;1;-1
+Arrabaes;1.0;1;-1
+Granja VR;0.6;1;-1
+Granja;0.9;1;-1
+Parada de Cunhos;0.5;1;-1
+Monte da Forca;1.5;1;-1
+R. Nova das Botelhas;1.8;1;-1
+Terminal Rodoviario;0.0;1;-1
+

@@ -1,0 +1,34 @@
+Vila Marim;1.0;1;-1
+Caravelas;1.2;1;-1
+Quintelas;0.9;1;-1
+Agarez;1.5;1;-1
+Ramadas;1.1;1;-1
+Pedregal;0.9;0;-1
+Lordelo;0.5;1;-1
+Laverqueira;0.4;1;-1
+Quinta da Veiga;0.6;1;-1
+Rua Concelho de Boticas;0.3;1;-1
+Rua do Valado;0.4;1;-1
+Escola Superior de Enfermagem;0.4;1;-1
+Instituto de Medicina Legal;0.4;1;-1
+Hospital;0.2;1;-1
+Quinta da Petisqueira;0.8;1;-1
+No IP4;0.5;1;-1
+Avenida da Noruega;0.5;1;-1
+Terminal Rodoviario;0.3;1;-1
+Rua D. Pedro de Castro;0.6;1;-1
+Mercado Lateral;0.3;1;-1
+Tribunal;0.6;1;-1
+Camara Municipal;0.7;1;-1
+Av. 1 de Maio;0.3;1;-1
+Museu;0.6;1;-1
+Parque Florestal;0.6;1;-1
+Av. Aureliano Barrigas;0.7;1;-1
+Avenida da Europa;0.8;1;-1
+Piscinas;0.8;1;-1
+Alameda Grasse II;1.2;1;-1
+Teatro;0.4;1;-1
+C.C. Nosso Shopping;0.9;1;-1
+Quinta da Araucaria;0.7;1;-1
+Praca da Galiza;0.4;1;-1
+UTAD Livraria;0.0;1;1
