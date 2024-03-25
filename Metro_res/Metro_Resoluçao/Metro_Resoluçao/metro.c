@@ -75,13 +75,15 @@ STATUS printLinkedList(LINKED_LIST);
 #endif // !_LINKED_LIST_DEFINITIONS
 
 STATUS startMetroLines(LINKED_LIST*, int);
-STATUS addStation(LINKED_LIST*);
+STATUS addStation(LINKED_LIST, const char*);
 void printMetroLine(LINKED_LIST);
 void destroyMetroNetwork(LINKED_LIST*);
 STATUS ReadLine(LINKED_LIST*, const char*);
 float custoLinha(LINKED_LIST);
 BOOLEAN stationExist(LINKED_LIST, const char*);
 STATUS changeStationStatus(LINKED_LIST);
+STATUS deleteStation(LINKED_LIST*, const char*);
+int getPostion(LINKED_LIST, const char*);
 
 int main()
 {
@@ -107,6 +109,7 @@ int main()
         fprintf(stdout, "6 -- Line Cost (enter Line)\n");
         fprintf(stdout, "7 -- Save lines data\n");
         fprintf(stdout, "8 -- Line Name\n");
+        fprintf(stdout, "9 -- Imprimir a Posição de uma Estação\n");
         fprintf(stdout, "\nOption: ");
         scanf("%d", &c);
         //flush the input buffer
@@ -115,13 +118,14 @@ int main()
         switch (c) {
         case 0: out = TRUE;
             break;
-        case 1: if (addStation(&metroNetwork) == OK)
+        case 1: if (addStation(&metroNetwork,"Hospital") == OK)
             printf("Estação adicionada com sucesso!\n");
               else
             printf("ERRO!\n");
             break;
-            /*        case 2: deleteStation(&metroNetwork, NULL);
-                        break;
+        case 2: deleteStation(&metroNetwork, "Hospital");
+            break;
+            /*
                     case 3: changeLineStatus(&metroNetwork, getLineNumber(metroNetwork));
                         break;
                     case 4: ticketFares(metroNetwork, nLines);
@@ -145,16 +149,18 @@ int main()
             else {
                 printf("Não exite");
             }
+        case 9: getPostion(metroNetwork, nome);
+            break;
         }
         break;
+
     } while (out != TRUE);
 
     destroyMetroNetwork(&metroNetwork);
 
     return OK;
-
-
 }
+
 STATUS startMetroLines(LINKED_LIST* list, int nlines)       
 {
     char nomeArquivo[20];
@@ -217,8 +223,52 @@ STATUS saveMetroLines(LINKED_LIST list, int nline) {
     else
         return ERROR;
 }
-STATUS addStation(LINKED_LIST* L)
+STATUS addStation(LINKED_LIST L, const char* afterStation)
 {
+    
+    STATION* newStation;
+    LIST_NODE* temp = L;  //aponta para início
+    LIST_NODE* newNode = NULL;
+    char op;
+
+    if (stationExist(L, afterStation) == FALSE) {
+        return ERROR;
+    }
+
+    //criar nova estação
+
+    newStation = (STATION*)malloc(sizeof(STATION));
+    if (newStation == NULL) {
+        return ERROR;
+    }
+
+    pritnf("Nome da Estação: ");
+    gets(newStation->nome);
+    printf("Custo: ");
+    scanf("%f", &newStation->custo); //para ler int's ou float passamos o & da variavel
+    printf("Ativa [s/n]: ");
+    scanf("%c", &op);
+    if (op == 's') {
+        newStation->estado = TRUE;
+    }
+    else {
+        newStation->estado = FALSE;
+    }
+
+    newStation->liga = -1;
+
+    if (newListNode(&newNode, newStation) == ERROR) {
+        return ERROR;
+    }
+
+    while (strcmp(afterStation, DATA(temp)->nome)!=0) {
+        temp = NEXT(temp);
+    }
+
+    NEXT(newNode) = NEXT(temp);
+    NEXT(temp) = newNode;
+
+
 
     return OK;
 }
@@ -234,7 +284,7 @@ void printMetroLine(LINKED_LIST list)  //imprimir a linha completa, ou seja, enq
 
 void destroyMetroNetwork(LINKED_LIST* L)
 {
-
+    destroyLinkedList(L);
 }
 
 
@@ -299,8 +349,8 @@ STATUS removeHeadLinkedList(LINKED_LIST* pL, STATION** pX)
     if (emptyLinkedList(*pL))
         return ERROR;
     // node deletion
-    pAuxN = *pL;
     *pL = NEXT(*pL);
+    pAuxN = *pL;
     // node data and memory handling
     if (pX != NULL) // if pX = NULL - don't want to use the returned data
         *pX = DATA(pAuxN);
@@ -364,6 +414,7 @@ float custoLinha(LINKED_LIST L) {
         L = NEXT(L);
         printf("Custo: %f", DATA(L)->custo);
     }
+    return final;
 }
 
 BOOLEAN stationExist(LINKED_LIST L, const char* name) { //percorre a lista e diz se existe ou não
@@ -396,6 +447,54 @@ STATUS changeStationStatus(LINKED_LIST L) {
     return ERROR;
 
 }
+
+STATUS deleteStation(LINKED_LIST* L, const char* nome)
+{
+    LIST_NODE* node, * ant;
+    node = *L;
+    ant = *L;
+
+    //percorrer a lista
+    while (node != NULL) {
+        //processar o nó
+        if (strcmp(nome, DATA(node)->nome) == 0) {
+            if (node == *L) {
+                *L = NEXT(node);
+            }
+            else {
+                NEXT(ant) = NEXT(node);
+            }
+            free(DATA(node));
+            free(node);
+            return OK;
+    }
+        else {
+            ant = node;
+            node = NEXT(node);
+        }
+    }
+
+
+    return ERROR;
+}
+
+int getPostion(LINKED_LIST L,const char* name)
+{
+    int i = 0;
+    char nome[30];
+    printf("Insira a estação que quer: ");
+    gets(nome);
+
+    while (strcmp(nome,DATA(L)->nome) !=0 && L!=NULL){
+        L = NEXT(L);
+        i++;
+    }
+    if (L == NULL) return -1;
+    printf("Está na posição %d", i);
+    return i;
+}
+
+
 //-------------------------------------------------------
 
 
