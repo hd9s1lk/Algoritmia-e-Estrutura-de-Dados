@@ -14,12 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,7 +24,7 @@
               "RelativeDocumentMoniker": "Metro_Resolu\u00E7ao\\metro.c",
               "ToolTip": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\Metro_res\\Metro_Resolu\u00E7ao\\Metro_Resolu\u00E7ao\\metro.c",
               "RelativeToolTip": "Metro_Resolu\u00E7ao\\metro.c",
-              "ViewState": "AQIAAJsBAAAAAAAAAAAUwB0BAAABAAAA",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAUwMAAAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-03-13T09:40:58.539Z",
               "EditorCaption": ""

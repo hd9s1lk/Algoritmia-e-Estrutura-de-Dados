@@ -450,7 +450,7 @@ STATUS changeStationStatus(LINKED_LIST L) {
 
 STATUS deleteStation(LINKED_LIST* L, const char* nome)
 {
-    LIST_NODE* node, * ant;
+    LIST_NODE* node, * ant;  
     node = *L;
     ant = *L;
 
@@ -462,7 +462,7 @@ STATUS deleteStation(LINKED_LIST* L, const char* nome)
                 *L = NEXT(node);
             }
             else {
-                NEXT(ant) = NEXT(node);
+                NEXT(ant) = NEXT(node); //sendo o primeiro, temos que garantir que o next do nó anterior, é o Next do próximo nó
             }
             free(DATA(node));
             free(node);
@@ -478,7 +478,7 @@ STATUS deleteStation(LINKED_LIST* L, const char* nome)
     return ERROR;
 }
 
-int getPostion(LINKED_LIST L,const char* name)
+int getPostion(LINKED_LIST L,const char* name)  //obter posição
 {
     int i = 0;
     char nome[30];
