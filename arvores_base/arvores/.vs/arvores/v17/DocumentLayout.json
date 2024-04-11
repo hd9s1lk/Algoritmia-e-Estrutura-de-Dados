@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\arvores_base\\arvores\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9788D511-C05A-46FB-8FC7-82F6D04A729A}|arvores\\arvores.vcxproj|C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\arvores_base\\arvores\\arvores\\Arvores.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9788D511-C05A-46FB-8FC7-82F6D04A729A}|arvores\\arvores.vcxproj|solutionrelative:arvores\\Arvores.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Arvores.c",
+              "DocumentMoniker": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\arvores_base\\arvores\\arvores\\Arvores.c",
+              "RelativeDocumentMoniker": "arvores\\Arvores.c",
+              "ToolTip": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\arvores_base\\arvores\\arvores\\Arvores.c",
+              "RelativeToolTip": "arvores\\Arvores.c",
+              "ViewState": "AQIAALQAAAAAAAAAAAAAAMcAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-10T08:18:34.413Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
