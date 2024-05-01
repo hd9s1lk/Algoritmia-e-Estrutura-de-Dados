@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tenis_PL3", "tenis_PL3\tenis_PL3.vcxproj", "{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Debug|x64.ActiveCfg = Debug|x64
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Debug|x64.Build.0 = Debug|x64
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Debug|x86.ActiveCfg = Debug|Win32
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Debug|x86.Build.0 = Debug|Win32
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Release|x64.ActiveCfg = Release|x64
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Release|x64.Build.0 = Release|x64
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Release|x86.ActiveCfg = Release|Win32
+		{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66DAE2B1-929B-40E5-ACFC-85E29DBF42FF}
+	EndGlobalSection
+EndGlobal

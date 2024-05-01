@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}|tenis_PL3\\tenis_PL3.vcxproj|C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\tenis.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}|tenis_PL3\\tenis_PL3.vcxproj|solutionrelative:tenis_PL3\\tenis.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}|tenis_PL3\\tenis_PL3.vcxproj|C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\torneio.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{F5E05173-3E2D-47B5-AAC8-49DA6A3F3272}|tenis_PL3\\tenis_PL3.vcxproj|solutionrelative:tenis_PL3\\torneio.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "torneio.txt",
+              "DocumentMoniker": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\torneio.txt",
+              "RelativeDocumentMoniker": "tenis_PL3\\torneio.txt",
+              "ToolTip": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\torneio.txt",
+              "RelativeToolTip": "tenis_PL3\\torneio.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-04-17T09:28:39.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "tenis.c",
+              "DocumentMoniker": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\tenis.c",
+              "RelativeDocumentMoniker": "tenis_PL3\\tenis.c",
+              "ToolTip": "C:\\Users\\Henrique Dias\\Documents\\GitHub\\Algoritmia-e-Estrutura-de-Dados\\tenis_PL3\\tenis_PL3\\tenis.c",
+              "RelativeToolTip": "tenis_PL3\\tenis.c",
+              "ViewState": "AQIAAPQAAAAAAAAAAAAAAP8AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-17T08:21:24.318Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
