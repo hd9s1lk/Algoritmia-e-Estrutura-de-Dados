@@ -45,6 +45,8 @@ void PrintPlayerGames(BTREE, char*);
 int BtreeDeep(BTREE);
 BOOLEAN ChangePlayerName(BTREE, char*, char*);
 void BtreeFree(BTREE*);
+void MaisDireita(BTREE);
+BOOLEAN RemoverPlayer(BTREE, char*);
 
 int main()
 {
@@ -77,7 +79,11 @@ int main()
 		printf("\n O novo nome do jogador: ");
 		gets(Novonome);
 		ChangePlayerName(Btree, nome, Novonome);
+		printf("Jogador mais a direita: ");
+		MaisDireita(Btree);
 		BtreeFree(&Btree);
+		RemoverPlayer(Btree, "Player6");
+		PrintLeaf(Btree);
 	}
 	else
 		printf("ERRO na leitura do ficheiro\n");
@@ -160,6 +166,8 @@ int CountLeafs(BTREE btree) {
 }
 
 void PrintLeaf(BTREE btree) {
+	if (btree == NULL)
+		return;
 	if (BtreeLeaf(btree))
 		printf("\n%s", DATA(btree)->name);
 	else {
@@ -200,10 +208,10 @@ int PlayerSetsGanhos(BTREE btree, char* nome)
 {
 	int i = 0;
 	if (btree != NULL) {
-		if (strcmp(nome, DATA(btree)->name) == 0) {
-			i += DATA(btree)->sets;
+		if (strcmp(nome, DATA(btree)->name) == 0) { //procurar por um jogador na arvore toda
+			i += DATA(btree)->sets; //na raiz
 		}
-		i += PlayerSetsGanhos(LEFT(btree), nome) + PlayerSetsGanhos(RIGHT(btree), nome);
+		i += PlayerSetsGanhos(LEFT(btree), nome) + PlayerSetsGanhos(RIGHT(btree), nome); //ver do lado esquerdo e do lado direito
 	}
 
 	return i;
@@ -213,11 +221,11 @@ int PlayerSetsJogados(BTREE btree, char* nome)
 {
 	int soma = 0;
 	if (btree != NULL && !BtreeLeaf(btree)) {
-		if ((strcmp(nome, (DATA(LEFT(btree))->name) == 0) || (strcmp(DATA(RIGHT(btree))->name, nome) ==0 )) {
+		if ((strcmp(nome, (DATA(LEFT(btree))->name) == 0) || (strcmp(DATA(RIGHT(btree))->name, nome) ==0 )) { //vê jogos na raiz
 			soma += DATA(LEFT(btree))->sets + DATA(RIGHT(btree))->sets;
 		}
-		soma += PlayerSetsGanhos(LEFT(btree), nome);
-		soma += PlayerSetsGanhos(RIGHT(btree), nome);
+		soma += PlayerSetsGanhos(LEFT(btree), nome); //vê do lado esquerdo
+		soma += PlayerSetsGanhos(RIGHT(btree), nome); //vê do lado direito
 	}
 	
 	return soma;
@@ -226,11 +234,11 @@ int PlayerSetsJogados(BTREE btree, char* nome)
 void PrintPlayerGames(BTREE btree, char* nome)
 {
 	if (btree != NULL && !BtreeLeaf(btree)) {
-		if ((strcmp(nome, (DATA(LEFT(btree))->name) == 0) || (strcmp(DATA(RIGHT(btree))->name, nome) == 0)) {
+		if ((strcmp(nome, (DATA(LEFT(btree))->name) == 0) || (strcmp(DATA(RIGHT(btree))->name, nome) == 0)) { //se tiver na raiz imprime
 			PrintGame(btree);
 		}
-		PrintPlayerGames(LEFT(btree),nome);
-		PrintPlayerGames(RIGHT(btree),nome);
+		PrintPlayerGames(LEFT(btree),nome); // se não vê do lado esquerdo
+		PrintPlayerGames(RIGHT(btree),nome); //vê do lado direito
 	}
 
 	return;
@@ -240,9 +248,9 @@ int BtreeDeep(BTREE btree) {
 	int deep = 0, left, right;
 
 	if (btree != NULL) {
-		left = BtreeDeep(LEFT(btree));
-		right = BtreeDeep(RIGHT(btree));
-		deep = 1 + ((left > right) ? left : right); // : é se não
+		left = BtreeDeep(LEFT(btree)); //guardar o deep do lado esquerdo
+		right = BtreeDeep(RIGHT(btree)); //guardar o deep do lado direito
+		deep = 1 + ((left > right) ? left : right); // : é se não ...  o maior deles mais um, ou seja, mais a raiz
 	}
 	return deep;
 }
@@ -251,11 +259,11 @@ BOOLEAN ChangePlayerName(BTREE btree, char*nome1, char*nome2)
 {
 	BOOLEAN find = FALSE;
 	if (btree != NULL) {
-		if (strcmp(DATA(btree)->name, nome1) == 0)
+		if (strcmp(DATA(btree)->name, nome1) == 0)  //vê na raiz o nome, se for igual troca
 			strcpy(DATA(btree)->name, nome2);
 		find = TRUE;
-		ChangePlayerName(LEFT(btree), nome1, nome2);
-		ChangePlayerName(RIGHT(btree), nome1, nome2);
+		ChangePlayerName(LEFT(btree), nome1, nome2); // se não for a raiz vê do lado esquerdo
+		ChangePlayerName(RIGHT(btree), nome1, nome2); //vê do lado direito
 	}
 }
 
@@ -269,3 +277,34 @@ void BtreeFree(BTREE *btree)
 		*btree = NULL;
 	}
 }
+
+void MaisDireita(BTREE bt) {
+	while (RIGHT(bt) != NULL) {
+		bt = RIGHT(bt);
+	}
+
+	printf("%s", DATA(bt)->name);
+		
+}
+
+BOOLEAN RemoverPlayer(BTREE bt, char* name) {
+	BOOLEAN find = FALSE;
+	if (bt != NULL && !BtreeLeaf(bt)) {
+		if (strcmp(DATA(LEFT(bt))->name, name) == 0) {
+			find = TRUE;
+			BtreeFree(&LEFT(bt));
+			return TRUE;
+		}
+		if (strcmp(DATA(RIGHT(bt))->name, name) == 0) {
+			find = TRUE;
+			BtreeFree(&RIGHT(bt));
+			return TRUE;
+
+		}
+
+		return find;
+	}
+
+}
+
+

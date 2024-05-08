@@ -1,5 +1,7 @@
 ﻿  tenis.c
-C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(67,3): warning C4013: 'gets' indefinido; assumindo extern retornando int
-C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(52,7): warning C4101: 'Novonome': variável local não referenciada
-C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(50,7): warning C4101: 'file_name': variável local não referenciada
-C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(205,103): error C2059: erro de sintaxe: ')'
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(58,7): warning C4101: 'Novonome': variável local não referenciada
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(57,7): warning C4101: 'nome': variável local não referenciada
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(56,7): warning C4101: 'file_name': variável local não referenciada
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(308,1): warning C4715: 'RemoverPlayer': nem todos os caminhos de controle retornam um valor
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\tenis_PL3\tenis.c(268,1): warning C4716: 'ChangePlayerName': deve retornar um valor
+  tenis_PL3.vcxproj -> C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\tenis_PL3\x64\Debug\tenis_PL3.exe
