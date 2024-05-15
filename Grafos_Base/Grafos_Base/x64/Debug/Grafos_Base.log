@@ -1,0 +1,8 @@
+﻿  Grafo.c
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Grafos_Base\Grafos_Base\Grafo.c(80,55): error C2122: 'EDGE': parâmetro de protótipo na lista de nomes inválido
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Grafos_Base\Grafos_Base\Grafo.c(80,55): error C2122: 'int *': parâmetro de protótipo na lista de nomes inválido
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Grafos_Base\Grafos_Base\Grafo.c(288,8): error C2084: função 'STATUS DFSGraph_M(GRAPH_M,EDGE,int *,int *,int *)' já possui um corpo
+  C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Grafos_Base\Grafos_Base\Grafo.c(185,8):
+  consulte a definição anterior de 'DFSGraph_M'
+  
+C:\Users\Henrique Dias\Documents\GitHub\Algoritmia-e-Estrutura-de-Dados\Grafos_Base\Grafos_Base\Grafo.c(348,32): warning C4305: 'função': truncamento de 'double' para 'float'
