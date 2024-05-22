@@ -31,7 +31,7 @@ typedef struct _EDGE {
 typedef struct _GRAPH_M {
     int nVertices;
     int nEdges;
-    int* pD;  //valores dos nós num lista
+    int* pD;  //valores dos nós numa lista
     float** adjMatrix;  //matriz de adjacência
 }GRAPH_M;
 
@@ -80,9 +80,8 @@ STATUS printAdjMatrix(GRAPH_M);
 STATUS printVertices(GRAPH_M);
 STATUS DFSTraverseGraph_M(GRAPH_M);
 STATUS DFSGraph_M(INT_GRAPH_M, EDGE, int*, int*, int*);
+int NumeroEdges(GRAPH_M,int);
 #endif // !_GRAPH_DEFINITIONS
-
-
 
 
 //#include "Graph.h" 
@@ -259,13 +258,13 @@ STATUS DFSTraverseGraph_M(GRAPH_M G){
                     
 if (emptyGraph_M(G))
     return ERROR;
-// starting vertex   
-EDGE e;
-e.v = 0;
-e.w = 0;
-e.weight = 0;       
-// order[] is to keep the order vertices are visited  
-// from[] is to keep where from vertices are visited  
+            // starting vertex   
+            EDGE e;
+            e.v = 0;
+            e.w = 0;
+            e.weight = 0;       
+            // order[] is to keep the order vertices are visited  
+            // from[] is to keep where from vertices are visited  
              int order[30];
              int from[30];
              for (int i = 0; i < 30; i++)
@@ -289,6 +288,24 @@ e.weight = 0;
              return OK;
              }
 
+int NumeroEdges(GRAPH_M G,int num)
+{
+    int i = 0, j=0, count=0;
+    //obter o index do num
+    for (i = 0; i < G.nVertices; i++) {
+        if (G.pD[i] == num) {
+            break;
+        }
+        //ir à matriz de adjacência e ler os valores diferentes de 0
+        for (j = 0; j < G.nVertices; j++) {
+            if (G.adjMatrix[i][j] != 0) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
 STATUS addEdgeGraph_M(GRAPH_M* G, EDGE e , BOOLEAN b) {
     //encontrar o indíce (e.v)
     int i, j;
@@ -307,12 +324,58 @@ STATUS addEdgeGraph_M(GRAPH_M* G, EDGE e , BOOLEAN b) {
     G->adjMatrix[i][j] = e.weight; //definir o peso de ligação
     G->nEdges++;
     
-    if (b == TRUE) {
+    if (b == FALSE) {
         G->adjMatrix[j][i] = e.weight; //bidirecionalidade
         G->nEdges++;
     }
     return OK;
 
+}
+
+int removeVertexGraph_M(GRAPH_M* G, int num)
+{
+    //encontrar o indíce
+    int i = 0, j=0, v=0;
+    for (i = 0; i < G->nVertices; i++) {
+        if (G->pD[i] == num) {
+            break;
+        }
+
+        //remover do vetor de vértices (pD)
+        G->pD[i] = G->pD[G->nVertices - 1]; //Fica com o valor do último vértice
+
+        //remover da linha e coluna da matriz
+        G->adjMatrix[i] = G->adjMatrix[G->nVertices - 1]; //ponteiro do nó aponta para a linha das ligações
+                                                          //coloca a última linha na linha que apagamos
+
+        for (v = 0; v < G->nVertices; v++) {
+            G->adjMatrix[v][i] = G->adjMatrix[v][G->nVertices - 1];
+        }
+
+        G->nVertices--;
+    }
+    return num;
+}
+
+EDGE removeEdgeGraph_M(GRAPH_M* G, EDGE e) {
+    int i, j;
+
+    for (i = 0; i < G->nVertices; i++) {
+        if (G->pD[i] == e.v) {
+            break;
+        }
+    }
+
+    for (j = 0; j < G->nVertices; j++) {
+        if (G->pD[j] == e.w) {
+            break;
+        }
+    }
+
+    G->adjMatrix[i][j] = 0;
+    G->adjMatrix[j][i] = 0;
+
+    G->nEdges--;
 }
 
 main() {
@@ -321,7 +384,8 @@ main() {
     addVertexGraph_M(&grafoX, 3); //adicionar vértice
     addVertexGraph_M(&grafoX, 7);
     addVertexGraph_M(&grafoX, 10);
-    addVertexGraph_M(&grafoX, 7);
+    addVertexGraph_M(&grafoX, 5);
+    addVertexGraph_M(&grafoX, 2);
 
     EDGE e = setEdge(5, 10, 2.3); //nó inicial, nó final, peso da ligação
     addEdgeGraph_M(&grafoX, e, FALSE); //o valor boolean fala sobre a bidirecionalidade, ou seja, o 5 fala com o 10 mas o 10 não 
@@ -335,9 +399,33 @@ main() {
     addEdgeGraph_M(&grafoX, e, FALSE);
     e = setEdge(3, 10, 5);
     addEdgeGraph_M(&grafoX, e, FALSE);
+    e = setEdge(5, 2, 3);
+    addEdgeGraph_M(&grafoX, e, FALSE); 
+
 
     printVertices(grafoX);   //imprimir vértices
     printAdjMatrix(grafoX); //imprimir matriz
+
+    removeVertexGraph_M(&grafoX, 10);
+
+    printVertices(grafoX);   //imprimir vértices
+    printAdjMatrix(grafoX); //imprimir matriz
+
+    e = setEdge(3, 7, 0);
+    removeEdgeGraph_M(&grafoX, e);
+    printAdjMatrix(grafoX); //imprimir matriz
+
+    DFSTraverseGraph_M(grafoX); //(3-7-5-10), 3 de indíce 0, 7 de indíce 1, etc...
+
+
+    printf("\n O nó tem %d ligações\n", NumeroEdges(grafoX, 10)); //output de 2
+    printf("\n O nó tem %d ligações\n", NumeroEdges(grafoX, 3)); //output de 3
+
+    //linha dá a partida e coluna as chegadas
+
+    //saber desenhar o grafo a partir do output de um código(matriz de adjacência e vértices);
+    //visita ao grado por profundidade (3-7-5-10)
+
 
 
 }
