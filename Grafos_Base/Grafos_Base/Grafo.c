@@ -335,7 +335,7 @@ STATUS addEdgeGraph_M(GRAPH_M* G, EDGE e , BOOLEAN b) {
 int removeVertexGraph_M(GRAPH_M* G, int num)
 {
     //encontrar o indíce
-    int i = 0, j=0, v=0;
+    int i = 0, j=0, v=0, l=0;
     for (i = 0; i < G->nVertices; i++) {
         if (G->pD[i] == num) {
             break;
@@ -343,6 +343,14 @@ int removeVertexGraph_M(GRAPH_M* G, int num)
 
         //remover do vetor de vértices (pD)
         G->pD[i] = G->pD[G->nVertices - 1]; //Fica com o valor do último vértice
+
+
+        //remover a linha e coluna da matriz
+        for (l = 0; l < G->nVertices; l++) {
+            G->adjMatrix[i][l] = G->adjMatrix[G->nVertices - 1][l];
+            G->adjMatrix[G->nVertices - 1][l] = 0;
+
+        }
 
         //remover da linha e coluna da matriz
         G->adjMatrix[i] = G->adjMatrix[G->nVertices - 1]; //ponteiro do nó aponta para a linha das ligações
@@ -372,6 +380,7 @@ EDGE removeEdgeGraph_M(GRAPH_M* G, EDGE e) {
         }
     }
 
+    //fazer para bidirecionado
     G->adjMatrix[i][j] = 0;
     G->adjMatrix[j][i] = 0;
 
@@ -386,6 +395,7 @@ main() {
     addVertexGraph_M(&grafoX, 10);
     addVertexGraph_M(&grafoX, 5);
     addVertexGraph_M(&grafoX, 2);
+    addVertexGraph_M(&grafoX, 6);
 
     EDGE e = setEdge(5, 10, 2.3); //nó inicial, nó final, peso da ligação
     addEdgeGraph_M(&grafoX, e, FALSE); //o valor boolean fala sobre a bidirecionalidade, ou seja, o 5 fala com o 10 mas o 10 não 
@@ -400,7 +410,9 @@ main() {
     e = setEdge(3, 10, 5);
     addEdgeGraph_M(&grafoX, e, FALSE);
     e = setEdge(5, 2, 3);
-    addEdgeGraph_M(&grafoX, e, FALSE); 
+    addEdgeGraph_M(&grafoX, e, FALSE);
+    e = setEdge(6, 2, 1);
+    addEdgeGraph_M(&grafoX, e, FALSE);
 
 
     printVertices(grafoX);   //imprimir vértices
